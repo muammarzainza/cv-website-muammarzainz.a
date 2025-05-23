@@ -1,0 +1,285 @@
+<!DOCTYPE html> <!--Jenis file HTML dalam bentuk document-->
+<html lang="id"> <!--bahasa html dalam bahasa indonesia-->
+    <head> <!--bagian kepala HTML-->
+        <meta charset="UTF-8"> <!--agar teks dapat ditampilkan dengan benar dan mendukung semua jenis karakter 
+        dan simbol khusus-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--tag untuk mengatur tampilan web
+        disesuaikan di perangkat seluler seperti HP dan tablet-->
+        <title>Zains Blogspot</title> <!--Judul web saya-->
+        <!--Membuat Desain CSS Untuk Web-->
+        <style> /*tag pembuka untuk CSS*/
+            body { /*mendesain bagian body web*/
+                font-family: Arial, sans-serif; /*menentukan font untuk body, arial utama, sans serif sebagai cadangan*/
+                margin: 0; /*membuat jarak di luar elemen, jarak = 0*/
+                padding: 0; /*membuat jarak antar di dalam elemen, jarak = 0*/
+            }
+            header { /*mendesain bagian header web*/
+                /*menambahkan gambar di latar belakang header dari link eskternal*/
+                background-image: url(https://i.pinimg.com/736x/6c/1b/a5/6c1ba5b2d367fbb54d322926a12a361f.jpg); 
+                background-size: cover; /*ukuran gambar latar belakang, cover = memperbesar gambar agar menutup seluruh
+                elemen*/
+                background-position: center; /*posisi background, di tengah*/
+                height: 50px; /*tinggi header 50px*/
+                position: relative; /*posisi bisa diatur ke atas atau bawah, kesamping kiri atau kanan*/
+                color: white; /* warna tulisan di header berwarna putih*/
+                padding: 80px 20px; /*jarak di di dalam elemen tulisan, atas-bawah: 80px, kiri-kanan: 20px*/
+                text-align: center; /*posisi teks berada di tengah*/
+                font-family: Georgia, 'Times New Roman', Times, serif; /*font untuk teks header, utama: georgia sisanya 
+                cadangan*/
+            }
+            .text-overlay { /*mendesain latar belakang teks header*/
+                background-color: rgba(0, 0, 0, 1.0); /*warna latar belakang teks header, rgba = memberikan opacity
+                dengan format merah,biru, hijau alpha; skala untuk merah,biru,hijau 0(semakin gelap) - 255(semakin cerah)
+                dan alpa 0.0 (semakin transparan) - 1.0 (semakin solid); 0, 0, 0, 1.0 = merah,biru hijau warna gelap
+                dan alpha sangat solid*/
+                padding: 20px; /*membuat jarak antar di dalam elemen, jarak = 20px*/
+                position: absolute; /*posisi elemen ditempatkan; absolute = posisi relatif terhadap elemen induk*/
+                bottom: 20px; /*mengatur jarak elemen dari bawah, jarak dari bawah 20px*/
+                left: 20px; /*mengatur jarak elemen dari kiri, jarak dari kiri 20px*/
+                border-radius: 8px; /*melengkungkan sudut elemen, sebesar 8px*/
+            }
+            nav { /*mendesain navigation bar*/
+                background: linear-gradient(aquamarine); /*membuat gradasi warna latar belakang secara garis lurus*/
+                padding: 15px 30px; /*jarak di dalam elemen tulisan; atas-bawah: 15px kiri-kanan: 30px*/
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /*bayangan disekitar elemen; bayangan ke kanan = 0,
+                bayangan ke bawah = 2px, blur = 6px, warna hitam keabuan*/
+            }
+            nav ul { /*mendesain navigation bar dalam bentuk unordered list*/
+                list-style: none; /* gaya untul kist = tidak ada*/
+                margin: 0; /*membuat jarak  di luar elemen, jarak = 0*/
+                padding: 0; /*membuat jarak antar di dalam elemen, jarak = 0*/
+                display: flex; /*menampilkan elemen, flex = mengaktifkan flexbox layout untuk mengatur posisi anak
+                elemen (flexbox = layout untuk mengatur dan menyusun anak elemen secara fleksibel*/
+                justify-content: center; /*digunakan bersama display:flex mengatur posisi anak elemen; center = 
+                menyebar di tengah*/
+                gap: 50px; /*jarak antar anak elemen*/
+            }
+            nav ul li a { /*mendesain navigation bar dalam bentuk unordered list dan memiliki link*/
+                color: black; /*warna tulisan*/
+                text-decoration: none; /* dekorasi tulisan, tidak ada*/
+                font-weight: bold; /*mengatur ketebalan teks, bold=tebal*/
+                font-size: 1.1em; /*ukuran teks, 1.1 kali ukuran font induk*/
+                transition: color 0.3s; background: 0.3s; /*animasi perubahan elemen latar belakang
+                secara halus selama 0.3 detik, berdasarkan color diatas(black)*/
+                padding: 8px 12px; /*jarak antar di dalam elemen tulisan, atas-bawah: 8px, kiri-kanan: 12px*/
+                border-radius: 6px; /*melengkungkan sudut elemen, sebesar 6px*/
+            }
+            nav ul li a:hover { /*mendesain perubahan elemen saat disentuh kursor*/
+                background-color: rgba(50, 50, 50, 0.5); /*warna latar belakang, abu-abu*/
+            }
+            article { /*mendesain bagian article web*/
+                margin-right: 20px; /*membuat jarak di luar elemen dari kanan, jarak = 20px*/
+                margin-left: 30px; /*membuat jarak antar di luar elemen dari kiri, jarak = 30px*/
+            }
+            .foto-bulat { /*mendesain gambar agar menjadi bulat*/
+                width: 150px; /*lebar gambar 150px*/              
+                height: 150px; /*tinggi gambar 150px*/
+                border-radius: 50%; /*melengkungkan sudut elemen, sebesar 50px*/       
+                background-color: aqua; /*warna latar belakang*/ 
+                padding: 20px; /*jarak antar di dalam elemen, jarak = 20px*/             
+                box-shadow: 0 4px 6px rgba(0,0,0,1.0); /*bayangan disekitar elemen; bayangan ke kanan = 0,
+                bayangan ke bawah = 4px, blur = 6px, warna hitam solid*/ 
+                object-fit: cover;  /*mengontrol gambar agar dapat muat dalam elemen, cover = gambar dizoom agar
+                menutupi seluruh elemen*/    
+            }
+            .h3 { /*mendesain bagian header 3 (h3)*/
+                background-color: aqua; /*warna latar belakang */
+                color: black; /*warna teks*/
+                padding: 5px; /*jarak antar di dalam elemen, jarak = 5px*/ 
+                border-radius: 5px; /*melengkungkan sudut elemen, sebesar 5px*/
+                display: inline-block; /*menampilkan elemen, display = inline-block, elemen ditampilkan dalam satu baris
+                namun width dan height bisa diatur*/
+            }
+            .table-khusus { /*desain css khusus tabel keahlian dan*/
+                border-collapse: collapse; /*mengatur border tabel antar sel, collapse = garis antar sel akan digabung
+                menjadi satu garis saja*/
+                width: 60%; /*lebar sel 60% dari aslinya*/
+                margin: 20px auto; /*jarak di luar sel, sebesar 20px dari kiri dan kanan secara otomatis*/
+            }
+            .th-khusus, .td-khusus { /* desain css untuk table hading dan table data*/
+                border: 1px solid yellowgreen; /*border tabel ketebalan 1px, solid = garis tidak terputus
+                dan berwanra kuning kehijauan*/
+                padding: 10px; /*jarak antar di dalam elemen, jarak = 10px*/ 
+                text-align: center; /*posisi teks di tengah*/
+            }
+            .th-khusus { /* desain css khusus table heading*/
+                background-color: aquamarine; /*warna latar belakang*/
+            }
+            .p-khusus { /*mendesain tag paragraf khusus di bagian "tentang saya"*/
+                text-indent: 30px; /*mengatur indentasi paragraf, sejauh 30px*/
+                text-align: justify; /*mengatur posisi diteks, pargraf justify (rata kiri kanan)*/
+            }  
+            aside { /*memberi desain untuk elemen aside*/
+                background-color: aquamarine; /*warna latar belakang*/
+                padding: 10px; /*jarak antar di dalam elemen, jarak = 10px*/
+                margin-top: 100px;
+            }
+            footer { /*memberi desain pada footer*/
+                margin-top: 10px; /*jarak elemen dari atas, jarak = 20px*/
+                text-align: center;
+                font-size: smaller;
+            }
+        </style> <!--tag penutup style-->
+    </head> <!--tag penutup head-->
+    <body> <!--bagian body HTML-->
+        <header> <!--bagian header body HTML-->
+            <div class="text-overlay"> <!--membungkus elemen dengan container dari css .text-overlay-->
+                <h1>Selamat datang di Zains Blogspot</h1> <!--heading tingkat pertama-->
+                <p>Blog tentang sains</p> <!--paragraf-->
+            </div> <!--penutup tag div-->
+        </header> <!--penutup tag header-->
+        <nav> <!--tag navigation bar-->
+            <ul> <!--list tidak berurut/undordered list-->
+                <li><a href="beranda.html">Beranda</a></li> <!--tag list berisi tag a (untuk membuat link) dan nama 
+                yang ditampilkan di web adalah Beranda, link internal akan terhubung ke file beranda.html dalam
+                folder yang sama-->
+                <li><a href="#">Tentang</a></li> <!--tag list berisi tag a (untuk membuat link) dan nama 
+                yang ditampilkan di web adalah Tentang-->
+            </ul> <!--penutup tag unordered list-->
+        </nav> <!--tag penutup nagivation bar-->
+        <main> <!--tag untuk menampung konten utama-->
+            <article> <!--tag untuk menandai konten yang berdiri sendiri-->
+                <h2 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', 
+                sans-serif; font-size: 50px;">Tentang Saya</h2> <!--heading tingkat kedua dengan style berupa
+                posisi teks di tengah dan font yang digunakan adalah Gill Sans (utama) sisanya cadangan, ukuran
+                teks 50px-->
+                <div style="text-align: left;"> <!--membungkus elemen dengan style posisi di sebelah kiri-->
+                <img src="Foto.jpg" style="width: 10%; height: 10%;" class="foto-bulat"> <!--tag untuk menyisipkan
+                gambar dari source foto.jpg yang ada dalam file yang sama dengan style lebar dan tinggi 10% dari
+                elemen induk dan format class diambil dari css .foto-bulat-->
+                </div> <!--penutup tag div-->
+                <h3 class="h3">Identitas diri</h3> <!--membuat heading tingkat ketiga dengan class yang diambil
+                dari css .h3-->
+                <table> <!--tag untuk membuat tabel-->
+                    <tr> <!--baris dalam tabel-->
+                        <td>Nama</td> <!--sel dalam baris-->
+                        <td>:</td> <!--sel dalam baris-->
+                        <td>Muammar Zain Z.A</td> <!--sel dalam baris-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td>Tempat, Tanggal Lahir</td> <!--sel dalam baris-->
+                        <td>:</td> <!--sel dalam baris--> 
+                        <td>Makassar, 19 Desember 2000</td> <!--sel dalam baris-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td>Alamat</td> <!--sel dalam baris-->
+                        <td>:</td> <!--sel dalam baris-->
+                        <td>Jl.Bendungan Bili-Bili Raya B/3, Makassar, Sulawesi Selatan</td> <!--sel dalam baris-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td>Jenis Kelamin</td> <!--sel dalam baris-->
+                        <td>:</td> <!--sel dalam baris-->
+                        <td>Laki-Laki</td> <!--sel dalam baris-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td>Kewarganegaraan</td> <!--sel dalam baris-->
+                        <td>:</td> <!--sel dalam baris-->
+                        <td>Indonesia</td> <!--sel dalam baris-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td>Status</td> <!--sel dalam baris-->
+                        <td>:</td> <!--sel dalam baris--> 
+                        <td>Belum Menikah</td> <!--sel dalam baris-->
+                    </tr> <!--penutup tag baris-->
+                </table> <!--penutup tag tabel-->
+                <h3 class="h3">Riwayat Pendidikan</h3> <!--heading 3 dengan class dari css .h3-->
+                <ul> <!--tag untuk membuat unordered list-->
+                    <li><b>SD: </b>SD Inpres BTN Ikip I Makassar (2007-2013)</li> <!--tag list beserta text formating
+                    bold-->
+                    <li><b>SMP: </b>SMPN 13 Makassar (2013-2016)</li> <!--tag list beserta text formating bold-->
+                    <li><b>SMA: </b>SMAN 9 Makassar (2016-2019)</li><!--tag list beserta text formating bold-->
+                    <li><b>Universitas Hasanuddin: </b>Pendidikan Matematika (2019-2024)</li> <!--tag list beserta 
+                    text formating bold-->
+                    <li><b>Universitas Siber Asia: </b>Informatika (2025-Sekarang)</li> <!--tag list beserta text 
+                    formating bold-->
+                </ul> <!--tag penutup unordered list-->
+                <h3 class="h3">Keahlian</h3> <!--heading 3 dengan class dari css .h3-->
+                <table class="table-khusus"> <!--tag untuk membuat tabel dengan format dari css .table-khusus-->
+                    <tr> <!--baris dalam tabel-->
+                        <th class="th-khusus">Hard Skill</th> <!--tag table heading dengan css .th-khusus-->
+                        <th class="th-khusus">Soft Skill</th> <!--tag table heading dengan css .th-khusus-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td class="td-khusus">Computer Skill (word, excel, ppt)</td> <!--sel dalam baris dengan css
+                        .td-khusus-->
+                        <td class="td-khusus">Komunikasi Efektif</td> <!--sel dalam baris dengan css .td-khusus-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td class="td-khusus">Bahasa Asing (bahasa inggris)</td> <!--sel dalam baris dengan css
+                        .td-khusus-->
+                        <td class="td-khusus">Disiplin</td> <!--sel dalam baris dengan css.td-khusus-->
+                    </tr> <!--penutup tag baris-->
+                    <tr> <!--baris dalam tabel-->
+                        <td class="td-khusus">Video editing (capcut, adobe premiere)</td> <!--sel dalam baris dengan css
+                        .td-khusus-->
+                        <td class="td-khusus"><i>Multitasking</i></td> <!--sel dalam baris dengan css.td-khusus dan tag
+                        format teks miring-->
+                    </tr> <!--penutup tag baris-->
+                </table> <!--tag penutup table-->
+                <h3 class="h3">Hobby</h3> <!--heading 3 dengan class dari css .h3-->
+                <ul> <!--tag untuk membuat unordered list-->
+                    <li>Bermain game</li> <!--tag list-->
+                    <li>Membaca buku</li> <!--tag list-->
+                    <li>Kulineran</li> <!--tag list-->
+                    <li>Menulis</li> <!--tag list-->
+                </ul> <!--tag penutup unordered list-->
+                <h3 class="h3">Riwayat pekerjaan</h3> <!--heading 3 dengan class dari css .h3-->
+                <ul> <!--tag untuk membuat unordered list-->
+                    <li>Staf Pengajar di JILC Minasaupa, Makassar (2024 - Sekarang)</li> <!--tag list-->
+                    <li>Digital Product Seller (2025 - Sekarang)</li> <!--tag list-->
+                </ul> <!--tag penutup unordered list-->
+                <h3 class="h3">Tentang saya</h3> <!--heading 3 dengan class dari css .h3-->
+                <p class="p-khusus"> Halo perkenalkan nama saya Muammar Zain Z.A, umur saya sekarang 24 tahun, seorang 
+                    mahasiswa semester dua di Universitas Siber Asia program studi PJJ (Pembelajaran Jarak Jauh) 
+                    Informatika. Saya memiliki ketertarikan terhadap sains dari masih duduk di SMP walaupun pada saat 
+                    SMP Saya hanya memahami matematika namun seiring saya duduk di bangku SMA saya mulai tertarik pada 
+                    bidang sains lainnya seperti fisika, kimia dan biologi, saya aktif mengikuti kegiatan olimpiade sains
+                    saat SMA dan pernah meraih juara 3 antar kota. Saya percaya bahwasanya sains itu menyenangkan
+                    dan akan membuat para pelajar entah SD, SMP atau SMA tertarik jika diajarkan dengan benar dan
+                    menyenangkan, karena itu dengan menjadi staf pengajar walaupun cuma di bimbingan belajar saya
+                    berharap apa yang saya ajarkan pada siswa-siswa saya bisa bermanfaat dan menginspirasi mereka
+                    untuk menyukai sains <!--tag paragraf dengan class dari format css .p-khusus-->
+                </p> <!--penutup tag paragraf-->
+                <p class="p-khusus">Dalam keseharian saya dikenal sebagai pribadi yang cerdas dan disiplin, sering ikut
+                    dalam berbagai kegiatan seperti seminar atau workshop. Saya juga suka menulis daily dimana itu 
+                    adalah curhatan saya mengenai pendidikan di Indonesia dan berniat dan saya berencana membuat buku
+                    jika saya memiliki waktu. Untuk sementara waktu mungkin saya akan menulis di blog ini dulu. Mungkin
+                    itu saja dari saya, Terima kasih atas perhatiannya. Terima Kasih <!--tag paragraf dengan class dari 
+                    format css .p-khusus-->
+                </p> <!--penutup tag paragraf-->
+                <h3 class="h3">Kontak dan Sosial Media</h3> <!--heading 3 dengan class dari css .h3-->
+                <p> Whatsapp: <!--paragraf-->
+                    <img src=
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/1022px-WhatsApp.svg.png"
+                    alt="Whatsapp" style="width: 20px;vertical-align: middle; margin-right: 5px;">
+                    <!--tag untuk menyisipkan gambar ditambah dengan src (menaruh url gambar eksternal atau nama file
+                    dari folder yang sama dengan HTML), alt = teks yang akan tampil saat gambar tidak terload, dengan
+                    style = menambahkan gaya dengan lebar 20px, vertical-align(mengatur posisi vertikal elemen) = 
+                    middle (posisi ikon di tengah teks / sejajar dengan teks) dan jarak elemen dari kanan 5px-->
+                    <a href="https://wa.me/6285784828784">+62 857-8482-8784</a> <!--tag link dengan atribut href
+                    sebagai tempat menyisipkan link-->
+                </p> <!--penutup tag paragraf-->
+                <p> Instagram: <!--paragraf-->
+                    <img src=
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
+                    alt="Instagram" style="width: 20px;vertical-align: middle; margin-right: 5px;">
+                    <!--tag untuk menyisipkan gambar ditambah dengan src (menaruh url gambar eksternal atau nama file
+                    dari folder yang sama dengan HTML), alt = teks yang akan tampil saat gambar tidak terload, dengan
+                    style = menambahkan gaya dengan lebar 20px, vertical-align(mengatur posisi vertikal elemen) = 
+                    middle (posisi ikon di tengah teks / sejajar dengan teks) dan jarak elemen dari kanan 5px-->
+                    <a href="https://www.instagram.com/muammarzainza/">@muammarzainza</a> <!--tag link dengan atribut href
+                    sebagai tempat menyisipkan link-->
+                </p> <!--penutup tag paragraf-->
+            </article> <!--tag penutup article-->
+        </main> <!--tag penutup main-->
+         <aside> <!--tag untuk membuat aside atau informasi pendukung web-->
+        <h4>Profil Penulis</h4> <!--heading tahap 4-->
+         <p>Nama: Muammar Zain Z.A</p> <!--paragraf-->
+         <p>Email: zainsmuammar@gmail.com</p> <!--paragraf-->
+         </aside> <!--tag penutup aside-->
+        <footer> <!--tag pembuka footer/penutup-->
+            &copy; 2025 Muammar Zain Z.A. All rights reserved. <br> <!--&copy untuk simbol copyright dan br = untuk
+            membuat baris baru-->
+        </footer> <!--tag penutup footer-->
+    </body> <!--tag penutup body web-->
+</html> <!--tag penutup HTML-->

@@ -1,0 +1,117 @@
+<!DOCTYPE html> <!--Jenis file HTML dalam bentuk document-->
+<html lang="id"> <!--bahasa html dalam bahasa indonesia-->
+    <head> <!--bagian kepala HTML-->
+        <meta charset="UTF-8"> <!--agar teks dapat ditampilkan dengan benar dan mendukung semua jenis karakter 
+        dan simbol khusus-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--tag untuk mengatur tampilan web
+        disesuaikan di perangkat seluler seperti HP dan tablet-->
+        <title>Zains Blogspot</title> <!--Judul web saya-->
+        <!--Membuat Desain CSS Untuk Web-->
+        <style> /*tag pembuka untuk CSS*/
+            body { /*mendesain bagian body web*/
+                font-family: Arial, sans-serif; /*menentukan font untuk body, arial utama, sans serif sebagai cadangan*/
+                margin: 0; /*membuat jarak di luar elemen, jarak = 0*/
+                padding: 0; /*membuat jarak antar di dalam elemen, jarak = 0*/
+            }
+            header { /*mendesain bagian header web*/
+                /*menambahkan gambar di latar belakang header dari link eskternal*/
+                background-image: url(https://i.pinimg.com/736x/6c/1b/a5/6c1ba5b2d367fbb54d322926a12a361f.jpg); 
+                background-size: cover; /*ukuran gambar latar belakang, cover = memperbesar gambar agar menutup seluruh
+                elemen*/
+                background-position: center; /*posisi background, di tengah*/
+                height: 50px; /*tinggi header 50px*/
+                position: relative; /*posisi bisa diatur ke atas atau bawah, kesamping kiri atau kanan*/
+                color: white; /* warna tulisan di header berwarna putih*/
+                padding: 80px 20px; /*jarak di di dalam elemen tulisan, atas-bawah: 80px, kiri-kanan: 20px*/
+                text-align: center; /*posisi teks berada di tengah*/
+                font-family: Georgia, 'Times New Roman', Times, serif; /*font untuk teks header, utama: georgia sisanya 
+                cadangan*/
+            }
+            .text-overlay { /*mendesain latar belakang teks header*/
+                background-color: rgba(0, 0, 0, 1.0); /*warna latar belakang teks header, rgba = memberikan opacity
+                dengan format merah,biru, hijau alpha; skala untuk merah,biru,hijau 0(semakin gelap) - 255(semakin cerah)
+                dan alpa 0.0 (semakin transparan) - 1.0 (semakin solid); 0, 0, 0, 1.0 = merah,biru hijau warna gelap
+                dan alpha sangat solid*/
+                padding: 20px; /*membuat jarak antar di dalam elemen, jarak = 20px*/
+                position: absolute; /*posisi elemen ditempatkan; absolute = posisi relatif terhadap elemen induk*/
+                bottom: 20px; /*mengatur jarak elemen dari bawah, jarak dari bawah 20px*/
+                left: 20px; /*mengatur jarak elemen dari kiri, jarak dari kiri 20px*/
+                border-radius: 8px; /*melengkungkan sudut elemen, sebesar 8px*/
+            }
+            nav { /*mendesain navigation bar*/
+                background: linear-gradient(aquamarine); /*membuat gradasi warna latar belakang secara garis lurus*/
+                padding: 15px 30px; /*jarak di dalam elemen tulisan; atas-bawah: 15px kiri-kanan: 30px*/
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /*bayangan disekitar elemen; bayangan ke kanan = 0,
+                bayangan ke bawah = 2px, blur = 6px, warna hitam keabuan*/
+            }
+            nav ul { /*mendesain navigation bar dalam bentuk unordered list*/
+                list-style: none; /* gaya untul kist = tidak ada*/
+                margin: 0; /*membuat jarak  di luar elemen, jarak = 0*/
+                padding: 0; /*membuat jarak antar di dalam elemen, jarak = 0*/
+                display: flex; /*menampilkan elemen, flex = mengaktifkan flexbox layout untuk mengatur posisi anak
+                elemen (flexbox = layout untuk mengatur dan menyusun anak elemen secara fleksibel*/
+                justify-content: center; /*digunakan bersama display:flex mengatur posisi anak elemen; center = 
+                menyebar di tengah*/
+                gap: 50px; /*jarak antar anak elemen*/
+            }
+            nav ul li a { /*mendesain navigation bar dalam bentuk unordered list dan memiliki link*/
+                color: black; /*warna tulisan*/
+                text-decoration: none; /* dekorasi tulisan, tidak ada*/
+                font-weight: bold; /*mengatur ketebalan teks, bold=tebal*/
+                font-size: 1.1em; /*ukuran teks, 1.1 kali ukuran font induk*/
+                transition: color 0.3s; background: 0.3s; /*animasi perubahan elemen latar belakang
+                secara halus selama 0.3 detik, berdasarkan color diatas(black)*/
+                padding: 8px 12px; /*jarak antar di dalam elemen tulisan, atas-bawah: 8px, kiri-kanan: 12px*/
+                border-radius: 6px; /*melengkungkan sudut elemen, sebesar 6px*/
+            }
+            nav ul li a:hover { /*mendesain perubahan elemen saat disentuh kursor*/
+                background-color: rgba(50, 50, 50, 0.5); /*warna latar belakang, abu-abu*/
+            }
+            article { /*mendesain bagian article web*/
+                margin-right: 20px; /*membuat jarak di luar elemen dari kanan, jarak = 20px*/
+                margin-left: 30px; /*membuat jarak antar di luar elemen dari kiri, jarak = 30px*/
+            }
+            aside { /*memberi desain untuk elemen aside*/
+                background-color: aquamarine; /*warna latar belakang*/
+                padding: 10px; /*jarak antar di dalam elemen, jarak = 10px*/
+                margin-top: 100px;
+            }
+            footer { /*memberi desain pada footer*/
+                margin-top: 10px; /*jarak elemen dari atas, jarak = 20px*/
+                text-align: center;
+                font-size: smaller;
+            }
+        </style> <!--tag penutup style-->
+    </head> <!--tag penutup head-->
+    <body> <!--bagian body HTML-->
+        <header> <!--bagian header body HTML-->
+            <div class="text-overlay"> <!--membungkus elemen dengan container dari css .text-overlay-->
+                <h1>Selamat datang di Zains Blogspot</h1> <!--heading tingkat pertama-->
+                <p>Blog tentang sains</p> <!--paragraf-->
+            </div> <!--penutup tag div-->
+        </header> <!--penutup tag header-->
+        <nav> <!--tag navigation bar-->
+            <ul> <!--list tidak berurut/undordered list-->
+                <li><a href="#">Beranda</a></li> <!--tag list berisi tag a (untuk membuat link) dan nama 
+                yang ditampilkan di web adalah Beranda-->
+                <li><a href="index.html">Tentang</a></li> <!--tag list berisi tag a (untuk membuat link) dan nama 
+                yang ditampilkan di web adalah Tentang, link internal akan terhubung ke file aboutme.html dalam
+                folder yang sama-->
+            </ul> <!--penutup tag unordered list-->
+        </nav> <!--tag penutup nagivation bar-->
+        <main> <!--tag untuk menampung konten utama-->
+            <article> <!--tag untuk menandai konten yang berdiri sendiri-->
+                <h2>Selamat Datang, selamat Belajar</h2>
+            </article>
+        </main>
+        <aside> <!--tag untuk membuat aside atau informasi pendukung web-->
+        <h4>Profil Penulis</h4> <!--heading tahap 4-->
+         <p>Nama: Muammar Zain Z.A</p> <!--paragraf-->
+         <p>Email: zainsmuammar@gmail.com</p> <!--paragraf-->
+         </aside> <!--tag penutup aside-->
+        <footer> <!--tag pembuka footer/penutup-->
+            &copy; 2025 Muammar Zain Z.A. All rights reserved. <br> <!--&copy untuk simbol copyright dan br = untuk
+            membuat baris baru-->
+        </footer> <!--tag penutup footer-->
+    </body> <!--tag penutup body web-->
+</html> <!--tag penutup HTML-->
